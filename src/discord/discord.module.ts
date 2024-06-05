@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
 import { DiscordService } from './discord.service';
+import { NeopleModule } from 'src/neople/neople.module';
 
 @Module({
-  imports: [ConfigModule],
+  imports: [NeopleModule],
   providers: [DiscordService],
 })
 export class DiscordModule {}
