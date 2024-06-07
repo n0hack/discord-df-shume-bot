@@ -1,6 +1,6 @@
 /**
  * 디스코드 봇에 커맨드를 등록하기 위해 사용하는 코드입니다.
- * - 개발 환경에서만 사용됩니다.
+ * - 개발 환경에서만 사용되며, pnpm set:command 명령어 수행 시 적용됩니다.
  */
 import { REST, Routes } from 'discord.js';
 import { config } from 'dotenv';

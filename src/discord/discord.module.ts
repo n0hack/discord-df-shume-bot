@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
+import { NeopleModule } from '../neople/neople.module';
 import { DiscordService } from './discord.service';
-import { NeopleModule } from 'src/neople/neople.module';
 
 @Module({
   imports: [NeopleModule],

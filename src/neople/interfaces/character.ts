@@ -1,4 +1,4 @@
-export interface Character {
+export type Character = {
   serverId: string;
   characterId: string;
   characterName: string;
@@ -8,8 +8,24 @@ export interface Character {
   jobName: string;
   jobGrowName: string;
   fame: number;
-}
+};
 
-export interface FetchCharacterInfo {
-  rows: Character[];
-}
+type Skill = {
+  skillId: string;
+  name: string;
+  level: number;
+  requiredLevel: number;
+  costType: 'SP' | 'TP';
+};
+
+type SkillGroup = {
+  hash: string;
+  style: {
+    active: Skill[];
+    passive: Skill[];
+  };
+};
+
+export type CharacterSkillTree = Character & {
+  skill: SkillGroup;
+};

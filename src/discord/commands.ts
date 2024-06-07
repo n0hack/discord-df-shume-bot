@@ -1,4 +1,4 @@
-import { serverList } from 'src/neople/constants/server';
+import { serverList } from '../neople/constants/server';
 
 export const commands = [
   {
@@ -7,11 +7,11 @@ export const commands = [
   },
   {
     name: '스킬트리',
-    description: '캐릭터의 스킬트리를 확인합니다.',
+    description: '특정 캐릭터의 스킬트리를 확인합니다.',
     options: [
       {
         name: '서버',
-        description: '캐릭터가 속한 서버의 이름입니다.',
+        description: '검색하고자 하는 캐릭터가 속한 서버의 이름입니다.',
         type: 3,
         required: true,
         choices: serverList.map((server) => ({
@@ -21,7 +21,7 @@ export const commands = [
       },
       {
         name: '캐릭터',
-        description: '캐릭터의 이름입니다.',
+        description: '검색하고자 하는 캐릭터의 이름입니다.',
         type: 3,
         required: true,
       },

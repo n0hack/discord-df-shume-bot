@@ -1,4 +1,4 @@
-import { Interaction } from 'discord.js';
+import { CommandInteraction } from 'discord.js';
 
 const messages = [
   '안개의 안녕을 전하오! 오늘도 모든 일이 순조롭기를 기원하오.',
@@ -8,8 +8,9 @@ const messages = [
   '안개의 안녕을 전하오! 오늘도 안전하고 행복한 하루 되길 기원하오.',
 ];
 
-export const greetingToShume = async (interaction: Interaction) => {
-  if (!interaction.isCommand()) return;
+export const greeting = async (interaction: CommandInteraction) => {
+  const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+  const userId = interaction.user.id;
 
-  await interaction.reply(messages[Math.floor(Math.random() * messages.length)]);
+  await interaction.reply(`<@${userId}> 공. ${randomMessage}`);
 };
