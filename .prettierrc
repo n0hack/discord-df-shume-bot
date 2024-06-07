@@ -1,5 +1,12 @@
 {
-  "printWidth": 120,
+  "printWidth": 140,
   "singleQuote": true,
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "importOrder": ["@nestjs", "<THIRD_PARTY_MODULES>", "^@", "^[./]"],
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrderParserPlugins": [
+    "typescript",
+    "classProperties",
+    "[\"decorators\", { \"decoratorsBeforeExport\": true }]"
+  ]
 }
