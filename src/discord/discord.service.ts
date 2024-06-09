@@ -38,7 +38,7 @@ export class DiscordService implements OnModuleInit {
 
   /**
    * 매일 자정에 장비 등급을 알려주는 메서드
-   * - 장비 등급이 최상급이 아닌 경우에도 알려줌
+   * - 장비 등급이 최상급인 경우에만 알려줌
    * - `KST`로 시간대를 고정했기에, 어떤 환경에서든 대한민국 시간 자정에 실행
    */
   @Cron(CronExpression.EVERY_SECOND)

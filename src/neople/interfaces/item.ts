@@ -24,7 +24,7 @@ export type ItemDetail = Item & {
   itemStatus: ItemStatus[];
 };
 
-type ItemGradeName = '최하급' | '하급' | '중급' | '상급' | '최상급';
+export type ItemGradeName = '최하급' | '하급' | '중급' | '상급' | '최상급';
 
 export type ItemSalesDetail = Pick<ItemDetail, 'itemId' | 'itemName' | 'itemStatus'> & {
   itemGradeName: ItemGradeName;

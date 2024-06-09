@@ -1,6 +1,6 @@
 import { TextChannel } from 'discord.js';
 import { items } from '../../../neople/constants/item';
-import { ItemType, ItemTypeDetail } from '../../../neople/interfaces/item';
+import { ItemGradeName, ItemType, ItemTypeDetail } from '../../../neople/interfaces/item';
 import { NeopleService } from '../../../neople/neople.service';
 import { ShumeEmbedBuilder } from '../../utils/embed';
 import { getKST } from '../../utils/time';
@@ -8,7 +8,7 @@ import { getKST } from '../../utils/time';
 type ConvertedItem = {
   itemType: Exclude<ItemType, '추가장비'> | '특수장비';
   itemTypeDetail: ItemTypeDetail;
-  itemGradeName: string;
+  itemGradeName: ItemGradeName;
   itemGradeValue: number;
   strNow: number;
   strMax: number;
@@ -62,6 +62,9 @@ export const itemGrade = async (channel: TextChannel, neopleSerivce: NeopleServi
         };
       }),
     );
+
+    // 장비 등급이 최상급인 경우에만 알려줌
+    if (convertedItems[0].itemGradeName !== '최상급') return;
 
     const { year, month, day } = getKST();
     const embed = new ShumeEmbedBuilder()
