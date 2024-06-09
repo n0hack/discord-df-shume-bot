@@ -10,7 +10,7 @@ export const commands = [
     description: '캐릭터의 스킬트리를 확인합니다.',
     options: [
       {
-        name: '서버명',
+        name: '서버',
         description: '검색하고자 하는 캐릭터가 속한 서버의 이름입니다.',
         type: 3,
         required: true,

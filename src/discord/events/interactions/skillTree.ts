@@ -4,7 +4,7 @@ import { ShumeEmbedBuilder } from '../../utils/embed';
 
 export const skillTree = async (interaction: CommandInteraction, neopleService: NeopleService) => {
   const serverId = `${interaction.options.get('서버').value}`;
-  const characterName = `${interaction.options.get('캐릭터').value}`;
+  const characterName = `${interaction.options.get('캐릭터명').value}`;
 
   try {
     const characterInfo = await neopleService.getCharacterInfo(serverId, characterName);
