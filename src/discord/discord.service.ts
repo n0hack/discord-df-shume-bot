@@ -43,7 +43,9 @@ export class DiscordService implements OnModuleInit {
    */
   @Cron(CronExpression.EVERY_SECOND)
   notifyDailyItemGrade() {
-    const channel = this.client.channels.cache.find((cn) => cn.type === ChannelType.GuildText && cn.name === '오늘의-등급');
+    const channel = this.client.channels.cache.find(
+      (cn) => cn.type === ChannelType.GuildText && cn.guild.name === '브런치' && cn.name === '오늘의-등급',
+    );
     const { hour, minute, second } = getKST();
 
     if (channel instanceof TextChannel && hour === 0 && minute === 0 && second === 0) {
