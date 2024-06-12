@@ -63,9 +63,6 @@ export const itemGrade = async (channel: TextChannel, neopleSerivce: NeopleServi
       }),
     );
 
-    // 장비 등급이 최상급인 경우에만 알려줌
-    if (convertedItems[0].itemGradeName !== '최상급') return;
-
     const { year, month, day } = getKST();
     const embed = new ShumeEmbedBuilder()
       .setTitle(`${year}.${month}.${day} 오늘의 등급 - ${convertedItems[0].itemGradeName}`)
